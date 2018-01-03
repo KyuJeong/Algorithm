@@ -28,4 +28,5 @@ int main()
 	cout << *min_element(DP, DP + 3);
 
 	return 0;
+
 }
