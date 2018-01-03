@@ -14,7 +14,7 @@ int main()
 	DP0[0] = 1;
 	DP1[1] = 1;
 
-	for (int i = 2; i<41; i++)
+	for (int i = 2; i < 41; i++)
 	{
 		DP0[i] = DP0[i - 1] + DP0[i - 2];
 		DP1[i] = DP1[i - 1] + DP1[i - 2];
