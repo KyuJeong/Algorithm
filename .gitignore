@@ -203,3 +203,6 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+# Input file
+input.txt
