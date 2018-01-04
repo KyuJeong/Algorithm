@@ -169,6 +169,10 @@
     <ClCompile Include="DP\1149_RGB 거리.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Tree\1086_트리.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Tree\2042_구간 합 구하기.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
