@@ -51,10 +51,20 @@
     <ClCompile Include="Tree\2042_구간 합 구하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="String\1100_하얀 칸.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="String\1764_듣보잡.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="String\9933_민균이의 비밀번호.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="String\9996_한국이 그리울 땐 서버에 접속하지.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input.txt">
-      <Filter>리소스 파일</Filter>
-    </Text>
+    <Text Include="input.txt" />
   </ItemGroup>
 </Project>
