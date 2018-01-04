@@ -45,7 +45,7 @@ int main()
 		}
 		sum += cost[arr[N - 1]][arr[0]];	// 처음 도시로 돌아오는 비용
 		ans = min(ans, sum);
-	} while (next_permutation(arr.begin(), arr.end()));	// 도시 방문 순서
+	} while (next_permutation(arr.begin() + 1, arr.end()));	// 도시 방문 순서
 
 	cout << ans;
 
