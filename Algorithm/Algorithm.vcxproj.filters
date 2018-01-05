@@ -63,6 +63,12 @@
     <ClCompile Include="String\9996_한국이 그리울 땐 서버에 접속하지.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Greedy\2217_로프.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Bit Mask\2098_외판원 순회.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
