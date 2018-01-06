@@ -2,46 +2,44 @@
 #include <algorithm>
 using namespace std;
 
-int Stk[100000][2];
-int DP[100000][3];
-int selected_stk;
+int stkr[100000][2];
+int DP[2][3];
+int T, n;
 
 int main()
 {
-	std::ios::sync_with_stdio(false);
+	scanf("%d", &T);
 
-	int T;
-
-	cin >> T;
-	int n;
-
-	for (int i = 0; i < T; i++)
+	while(T--)
 	{
-		cin >> n;
+		scanf("%d", &n);
 
 		for (int j = 0; j < n; j++)
 		{
-			cin >> Stk[j][0];
+			scanf("%d", &stkr[j][0]);
 		}
 
 		for (int j = 0; j < n; j++)
 		{
-			cin >> Stk[j][1];
+			scanf("%d", &stkr[j][1]);
 		}
 
-		DP[0][0] = Stk[0][0];
-		DP[0][1] = Stk[0][1];
+		DP[0][0] = stkr[0][0];
+		DP[0][1] = stkr[0][1];
 		DP[0][2] = 0;
 
 		for (int j = 1; j < n; j++)
 		{
-			DP[j][0] = max(DP[j - 1][1], DP[j - 1][2]) + Stk[j][0];
-			DP[j][1] = max(DP[j - 1][0], DP[j - 1][2]) + Stk[j][1];
-			DP[j][2] = max(DP[j - 1][0], DP[j - 1][1]);
+			DP[1][0] = max(DP[0][1], DP[0][2]) + stkr[j][0];
+			DP[1][1] = max(DP[0][0], DP[0][2]) + stkr[j][1];
+			DP[1][2] = max(DP[0][0], DP[0][1]);
+
+			DP[0][0] = DP[1][0];
+			DP[0][1] = DP[1][1];
+			DP[0][2] = DP[1][2];
 		}
 
-		cout << max(DP[n - 1][0], DP[n - 1][1]) << "\n";
-
+		printf("%d\n", max(DP[0][0], DP[0][1]));
 	}
 
 

@@ -159,10 +159,10 @@
     <ClCompile Include="Divide and Conquer\1074_Z.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CodeForces\코드포스_a.cpp">
+    <ClCompile Include="CodeForces\456_A_Tricky Alchemy.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CodeForces\코드포스_b.cpp">
+    <ClCompile Include="CodeForces\456_B_New Year%27s Eve.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
