@@ -11,7 +11,7 @@ int ans;
 
 void Recursion(int row, int col, int side)
 {
-	if (side == 2)
+	if (side == 1)
 	{
 		if (row == r && col == c)
 		{
