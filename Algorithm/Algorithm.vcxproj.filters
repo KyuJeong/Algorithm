@@ -165,6 +165,9 @@
     <ClCompile Include="CodeForces\456_B_New Year%27s Eve.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DP\1509_팰린드롬 분할.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
