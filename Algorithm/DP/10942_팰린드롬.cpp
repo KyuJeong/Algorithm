@@ -20,14 +20,14 @@ int main()
 	{
 		for (int j = 1; j <= N - i; j++)
 		{
-			if (i == 0)
+			if (i == 0)		// 한 글자
 				DP[j][j] = 1;
-			else if (i == 1)
+			else if (i == 1)	// 두 글자
 			{
 				if (arr[j] == arr[j + 1])
 					DP[j][j + 1] = 1;
 			}
-			else
+			else    // 세 글자 이상일 때
 			{
 				if (arr[j] == arr[j + i] && DP[j + 1][j + i - 1] == 1)
 					DP[j][j + i] = 1;
