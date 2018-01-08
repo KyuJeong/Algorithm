@@ -7,7 +7,7 @@ using namespace std;
 
 int N;
 int mtx[501][2];
-int DP[501][501];	// [col]부터 [row]까지 행렬 곱의 최솟값
+int DP[501][501];	// [i]부터 [j]까지 행렬 연산 수의 최솟값
 
 int main()
 {
@@ -34,6 +34,8 @@ int main()
 			for (int k = 0; k < i; k++)
 			{
 				int mul_matrix = mtx[j][0] * mtx[j + k][1] * mtx[j + i][1];
+
+				// j ~ j + i 의 최솟값을 (j) ~ (j + k) / (j + k + 1) ~ (j + 1)로 분할해서 연산
 				DP[j][j+i] = min(tmp, DP[j][j + k] + DP[j + k + 1][j + i] + mul_matrix);
 				tmp = DP[j][j + i];
 			}
