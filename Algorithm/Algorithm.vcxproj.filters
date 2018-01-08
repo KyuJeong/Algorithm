@@ -168,7 +168,7 @@
     <ClCompile Include="DP\1509_팰린드롬 분할.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DP\ex.cpp">
+    <ClCompile Include="DP\11066_파일 합치기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
