@@ -22,7 +22,7 @@ int main()
 	while(t--)
 	{		
 		scanf("%d", &n);
-		printf("%d", DP[n]);
+		printf("%lld", DP[n]);
 	}
 
 	return 0;
