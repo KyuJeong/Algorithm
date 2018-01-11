@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
 
+int T, N;
+
 int main()
 {
-	std::ios::sync_with_stdio(false);
+	scanf("%d", &T);
 
-	int T, n;
-	cin >> T;
-
-	for (int i = 0; i < T; i++)
+	while (T--)
 	{
 		bool room[101] = { 0 };
 		int open_count = 0;
-		cin >> n;
-		for (int j = 1; j <= n; j++)
+		scanf("%d", &N);
+		for (int j = 1; j <= N; j++)
 		{
-			for (int k = 1; k * j <= n; k++)
+			for (int k = 1; k * j <= N; k++)
 			{
 				if (room[k*j] == 0)
 					room[k*j] = 1;
@@ -23,7 +22,7 @@ int main()
 					room[k*j] = 0;
 			}
 		}
-		for (int k = 1; k <= n; k++)
+		for (int k = 1; k <= N; k++)
 		{
 			if (room[k] == 1)
 				open_count++;
