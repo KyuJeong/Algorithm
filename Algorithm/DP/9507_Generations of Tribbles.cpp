@@ -3,11 +3,9 @@ using namespace std;
 
 int main()
 {
-	std::ios::sync_with_stdio(false);
-
 	int t, n;
 
-	cin >> t;
+	scanf("%d", &t);
 
 	long long DP[69];
 
@@ -21,11 +19,10 @@ int main()
 		DP[i] = DP[i - 1] + DP[i - 2] + DP[i - 3] + DP[i - 4];
 	}
 
-	for (int i = 0; i < t; i++)
-	{
-		cin >> n;
-		cout << DP[n] << "\n";
-
+	while(t--)
+	{		
+		scanf("%d", &n);
+		printf("%d", DP[n]);
 	}
 
 	return 0;
