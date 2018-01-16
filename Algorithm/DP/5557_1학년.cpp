@@ -3,7 +3,7 @@
 using namespace std;
 
 int N, num;
-long long DP[101][21]; // i번째 수까지 계산해서 j를 만드는 경우의 수
+long long DP[101][21]; // i번째 수까지 계산해서 j를 만드는 경우의 수 
 
 int main()
 {
