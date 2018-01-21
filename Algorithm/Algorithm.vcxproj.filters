@@ -324,6 +324,18 @@
     <ClCompile Include="DP\5557_1학년.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2931_가스관.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\457_A_Jamie and Alarm Snooze.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\457_B_Jamie and Binary Sequence.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\457_C_Jamie and Interesting Graph.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
