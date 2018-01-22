@@ -342,6 +342,9 @@
     <ClCompile Include="Realization\14612_김식당.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Realization\1715_카드 정렬하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
