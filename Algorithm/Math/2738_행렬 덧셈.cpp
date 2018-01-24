@@ -8,7 +8,6 @@ int tmp;
 
 int main()
 {
-	std::ios::sync_with_stdio(false);
 	scanf("%d %d", &N, &M);
 
 	for (int i = 0; i < N; i++)
