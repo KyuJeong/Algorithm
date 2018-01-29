@@ -447,7 +447,10 @@
     <ClCompile Include="String\10757_큰 수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Math\14501_퇴사.cpp">
+    <ClCompile Include="DP\14501_퇴사.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\1168_조세퍼스 문제 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
