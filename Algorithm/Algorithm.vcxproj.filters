@@ -450,7 +450,7 @@
     <ClCompile Include="DP\14501_퇴사.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Math\1168_조세퍼스 문제 2.cpp">
+    <ClCompile Include="Data Structure\1168_조세퍼스 문제 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
