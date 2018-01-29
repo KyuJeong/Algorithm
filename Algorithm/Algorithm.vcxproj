@@ -226,7 +226,10 @@
     <ClCompile Include="Math\1016_제곱 ㄴㄴ 수.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Math\10757_큰 수.cpp" />
+    <ClCompile Include="Math\14501_퇴사.cpp" />
+    <ClCompile Include="String\10757_큰 수.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Math\10830_행렬 제곱.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
