@@ -474,6 +474,9 @@
     <ClCompile Include="String\5622_다이얼.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="String\2941_크로아티아 알파벳.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

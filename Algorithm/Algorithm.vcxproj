@@ -583,7 +583,10 @@
     <ClCompile Include="String\1764_듣보잡.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="String\5622_다이얼.cpp" />
+    <ClCompile Include="String\2941_크로아티아 알파벳.cpp" />
+    <ClCompile Include="String\5622_다이얼.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="String\9933_민균이의 비밀번호.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
