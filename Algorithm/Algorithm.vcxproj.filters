@@ -471,6 +471,9 @@
     <ClCompile Include="String\1316_그룹 단어 체커.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="String\5622_다이얼.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
