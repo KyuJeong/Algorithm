@@ -190,7 +190,10 @@
     <ClCompile Include="Graph\13913_숨바꼭질 4.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Graph\2589_보물섬.cpp" />
+    <ClCompile Include="Graph\2589_보물섬.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Graph\7562_나이트의 이동.cpp" />
     <ClCompile Include="Graph\Dijkstra\10217_KCM Travel.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
