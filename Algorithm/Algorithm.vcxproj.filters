@@ -489,6 +489,30 @@
     <ClCompile Include="Math\1977_완전제곱수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CodeForces\460_A_Supermarket.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\460_B_Perfect Number.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\460_C_Seat Arrangements.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\461_A_Cloning Toys.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\461_B_Magic Forest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\461_C_Cave Painting.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\461_D_Robot Vacuum Cleaner.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph\2589_보물섬.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
