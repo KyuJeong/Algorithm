@@ -6,7 +6,6 @@ using namespace std;
 
 int N;
 vector <int> v;
-bool arr[10000000];
 int pre, cur;
 int ans;
 
