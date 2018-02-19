@@ -655,7 +655,10 @@
     <ClCompile Include="String\9996_한국이 그리울 땐 서버에 접속하지.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="SW test\14889_스타트와 링크.cpp" />
+    <ClCompile Include="SW test\14889_스타트와 링크.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SW test\14889_스타트와 링크_Bit Mask.cpp" />
     <ClCompile Include="Tree\1086_트리.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
