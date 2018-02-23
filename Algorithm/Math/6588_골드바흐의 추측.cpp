@@ -35,7 +35,6 @@ int main()
 				break;
 			}
 		}
-
 		scanf("%d", &n);
 	}
 
