@@ -444,9 +444,6 @@
     <ClCompile Include="String\10757_큰 수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DP\14501_퇴사.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Data Structure\1168_조세퍼스 문제 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -556,6 +553,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="SW test\14502_연구소.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SW test\14501_퇴사.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
