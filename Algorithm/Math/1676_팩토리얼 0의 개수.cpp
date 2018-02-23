@@ -26,6 +26,5 @@ int main()
 	}
 
 	cout << NFac;
-
 	return 0;
 }
