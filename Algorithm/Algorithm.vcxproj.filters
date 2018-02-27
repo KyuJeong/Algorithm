@@ -612,6 +612,9 @@
     <ClCompile Include="Divide and Conquer\2805_나무 자르기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Brute-Force\temp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
