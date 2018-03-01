@@ -621,6 +621,9 @@
     <ClCompile Include="SW test\14499_주사위 굴리기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SW test\14500_테트로미노.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
