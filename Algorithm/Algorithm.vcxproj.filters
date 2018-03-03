@@ -42,9 +42,6 @@
     <ClCompile Include="Tree\1086_트리.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\2042_구간 합 구하기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="String\1100_하얀 칸.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -625,6 +622,36 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="SW test\12100_2048 %28Easy%29.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Data Structure\1406_에디터.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\1377_버블 소트.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\2751_수 정렬하기 2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\10825_국영수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\10989_수 정렬하기 3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\11004_K번째 수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\11650_좌표 정렬하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\11652_카드.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\Segment Tree\14438_수열과 쿼리 17.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\Segment Tree\2042_구간 합 구하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
