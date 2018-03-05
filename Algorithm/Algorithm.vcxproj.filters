@@ -654,6 +654,9 @@
     <ClCompile Include="Tree\Segment Tree\2042_구간 합 구하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SW test\SW_1767_프로세서 연결하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
