@@ -5,7 +5,7 @@ using namespace std;
 int N;
 int A[1000001];
 int B, C;
-int ans;
+long long ans;
 
 int main()
 {
