@@ -657,6 +657,9 @@
     <ClCompile Include="SW test\SW_1767_프로세서 연결하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SW test\13458_시험 감독.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
