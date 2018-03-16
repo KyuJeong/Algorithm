@@ -690,7 +690,10 @@
     <ClCompile Include="DP\2169_로봇 조종하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DP\5582_공통 부분 문자열.cpp">
+    <ClCompile Include="DP\LCS\5582_공통 부분 문자열.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DP\1660_캡틴 이다솜.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
