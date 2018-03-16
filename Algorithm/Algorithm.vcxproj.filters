@@ -696,6 +696,9 @@
     <ClCompile Include="DP\1660_캡틴 이다솜.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DP\LIS\2352_반도체 설계.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
