@@ -148,7 +148,10 @@
     <ClCompile Include="DP\10164_격자상의 경로.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="DP\2718_타일 채우기.cpp" />
+    <ClCompile Include="DP\11060_점프 점프.cpp" />
+    <ClCompile Include="DP\2718_타일 채우기.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="DP\9084_동전.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
