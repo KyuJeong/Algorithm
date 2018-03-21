@@ -699,6 +699,9 @@
     <ClCompile Include="DP\LIS\2352_반도체 설계.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DP\1038_감소하는 수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
