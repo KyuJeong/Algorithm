@@ -1,7 +1,6 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-#include <cstring>
 
 using namespace std;
 
@@ -15,9 +14,9 @@ int src, dst;
 vector <vector <pii>> G;
 int from, go, edge;
 vector <int> dist;
-bool visit[1001];
+int parent[1001];
 
-inline void Dijkstra()
+void Dijkstra()
 {
 	priority_queue <pii> pq;
 
@@ -40,11 +39,10 @@ inline void Dijkstra()
 			{
 				dist[nxt] = ncost;
 				pq.push({ -ncost,nxt });
+				parent[nxt] = cur;
 			}
 		}
-
 	}
-	
 }
 
 int main()
@@ -52,14 +50,11 @@ int main()
 	std::ios::sync_with_stdio(false);
 
 	cin >> n >> m;
-
 	G.resize(n + 1);
 	dist.resize(n + 1);
 
 	for (int i = 1; i <= n; i++)
-	{
 		dist[i] = INF;
-	}
 
 	for (int i = 0; i < m; i++)
 	{
@@ -71,7 +66,22 @@ int main()
 
 	Dijkstra();
 
-	cout << dist[dst];
+	vector <int> trace;
+	int idx = dst;
+	trace.push_back(dst);
+	while (idx != src)
+	{
+		int nidx = parent[idx];
+		trace.push_back(nidx);
+		idx = nidx;
+	}
+
+	cout << dist[dst] << "\n";
+	cout << trace.size() << "\n";
+	for (int i = trace.size() - 1; i >= 0; i--)
+	{
+		cout << trace[i] << " ";
+	}
 
 	return 0;
 }
