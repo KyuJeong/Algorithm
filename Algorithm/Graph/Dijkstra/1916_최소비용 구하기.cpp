@@ -1,7 +1,6 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-#include <cstring>
 
 using namespace std;
 
@@ -15,7 +14,6 @@ int src, dst;
 vector <vector <pii>> G;
 int from, go, edge;
 vector <int> dist;
-bool visit[1001];
 
 inline void Dijkstra()
 {
@@ -42,9 +40,7 @@ inline void Dijkstra()
 				pq.push({ -ncost,nxt });
 			}
 		}
-
 	}
-	
 }
 
 int main()
