@@ -723,6 +723,9 @@
     <ClCompile Include="CodeForces\472_C_Three-level Laser.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Geometry\1004_어린 왕자.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
