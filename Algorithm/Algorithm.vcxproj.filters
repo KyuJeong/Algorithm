@@ -732,6 +732,9 @@
     <ClCompile Include="Brute-Force\1065_한수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Recursive\2448_별찍기 - 11.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
