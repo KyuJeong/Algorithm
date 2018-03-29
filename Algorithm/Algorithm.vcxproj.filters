@@ -771,6 +771,9 @@
     <ClCompile Include="Graph\7576_토마토.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Graph\1652_누울 자리를 찾아라.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
