@@ -780,6 +780,9 @@
     <ClCompile Include="Input and Output\5338_마이크로소프트 로고.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Math\2753_윤년.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
