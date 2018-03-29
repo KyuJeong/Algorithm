@@ -214,7 +214,9 @@
     <ClCompile Include="Input and Output\5338_마이크로소프트 로고.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Math\1037_약수.cpp" />
+    <ClCompile Include="Math\1037_약수.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">아니오</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Math\1652_누울 자리를 찾아라.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>

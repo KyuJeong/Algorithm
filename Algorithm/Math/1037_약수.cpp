@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector <int> v;
+vector <long long> v;
 int N;
 int tmp;
 
@@ -23,7 +23,9 @@ int main()
 
 	sort(v.begin(), v.end());
 
-	cout << v[0] * v[N - 1];
+	long long ans = v[0] * v[N - 1];
+
+	cout << ans;
 
 	return 0;
 }
