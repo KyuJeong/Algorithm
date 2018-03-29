@@ -774,7 +774,10 @@
     <ClCompile Include="Math\1652_누울 자리를 찾아라.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Simulation\10250_ACM 호텔.cpp">
+    <ClCompile Include="Math\10250_ACM 호텔.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Input and Output\5338_마이크로소프트 로고.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
