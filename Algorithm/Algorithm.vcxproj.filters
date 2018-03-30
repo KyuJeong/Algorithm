@@ -786,6 +786,9 @@
     <ClCompile Include="Math\1037_약수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="String\1032_명령 프롬프트.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
