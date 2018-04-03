@@ -798,6 +798,9 @@
     <ClCompile Include="Math\1550_16진수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DP\2688_줄어들지 않아.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
