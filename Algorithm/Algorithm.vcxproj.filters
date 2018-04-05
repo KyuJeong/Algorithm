@@ -828,6 +828,9 @@
     <ClCompile Include="CodeForces\473_E_Mahmoud and Ehab and the xor-MST.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SW test\SW_4014_활주로 건설.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
