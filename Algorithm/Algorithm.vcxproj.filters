@@ -831,6 +831,9 @@
     <ClCompile Include="SW test\SW_4014_활주로 건설.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SW test\SW_4013_특이한 자석.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
