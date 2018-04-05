@@ -807,7 +807,25 @@
     <ClCompile Include="Realization\3943_헤일스톤 수열.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DP\1958_LCS 3.cpp">
+    <ClCompile Include="DP\LCS\1958_LCS 3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DP\10835_카드게임.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\473_A_Mahmoud and Ehab and the even-odd game.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Brute-Force\2309_일곱 난쟁이.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\473_B_Mahmoud and Ehab and the message.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\473_C_Mahmoud and Ehab and the wrong algorithm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeForces\473_E_Mahmoud and Ehab and the xor-MST.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
