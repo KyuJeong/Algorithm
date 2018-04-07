@@ -837,6 +837,9 @@
     <ClCompile Include="SW test\SW_4012_요리사.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SW test\SW_4008_숫자 만들기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
