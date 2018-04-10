@@ -840,6 +840,9 @@
     <ClCompile Include="SW test\SW_4008_숫자 만들기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Recursive\2447_별찍기 - 10.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
