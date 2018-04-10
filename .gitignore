@@ -62,6 +62,8 @@ dlldata.c
 *.pidb
 *.svclog
 *.scc
+*.vcxproj
+*.vcxproj.user
 
 # Chutzpah Test files
 _Chutzpah*
@@ -73,6 +75,7 @@ ipch/
 *.opensdf
 *.sdf
 *.cachefile
+*.VC.db
 
 # Visual Studio profiler
 *.psess
@@ -206,3 +209,6 @@ $RECYCLE.BIN/
 
 # Input file
 input.txt
+
+# Base code
+base.cpp
