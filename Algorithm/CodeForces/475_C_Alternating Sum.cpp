@@ -4,14 +4,14 @@
 
 using namespace std;
 
-#define MOD 1000000009;
+#define MOD 1000000009
 
 typedef long long ll;
 typedef long double ld;
 
 ld n, a, b, k;
 string s;
-ll ans;
+ll T;
 
 ll Calc(ll num, ll exp)
 {
@@ -19,8 +19,14 @@ ll Calc(ll num, ll exp)
 	while (exp != 0)
 	{
 		if (exp & 1 != 0)
-			ret = (ret * num) % MOD;
-		num = (num * num) % MOD;
+		{
+			ret = ret * num;
+			if (ret >= MOD)
+				ret %= MOD;
+		}
+		num = num * num;
+		if (num >= MOD)
+			num %= MOD;
 		exp >>= 1;
 	}
 
@@ -41,6 +47,7 @@ int main()
 		ll r = Calc(b, i);
 
 		ll cur = l * r;
+
 		if (s[i] == '-')
 			cur = -cur;
 
@@ -48,28 +55,36 @@ int main()
 		if (cur < 0)
 			cur += MOD;
 
-		ans += cur;
-		ans %= MOD;
+		T += cur;
+		T %= MOD;
 	}
 
-	ll cnt = (n + 1) / k;
+	ll Q = (n + 1) / k;
 
-	ll bn = Calc(b, cnt);
-	ll an = Calc(a, cnt);
+	if (Q == 1)
+	{
+		cout << T;
+		return 0;
+	}
+
+	ll bn = Calc(b, k);
+	ll an = Calc(a, k);
 	
-	ll tmp1 = (ans * bn) % MOD;
-	ll tmp2 = (ans * an) % MOD;
+	ll r = (bn * Calc(an, MOD - 2LL)) % MOD;
 
-	ll tmp3 = (tmp1 / tmp2) % MOD;
-	ll tmp4 = -ans;
-	ll bj = (tmp3 + tmp4);
-	bj %= MOD;
+	ll up = Calc(r, Q);
+	up--;
 
-	if (bj < 0)
-		bj += MOD;
+	ll down = r - 1;
+	if (down == 0)
+	{
+		ll ans = (T * Q) % MOD;
+		cout << ans;
+		return 0;
+	}
+	ll mul = (up * Calc(down, MOD - 2LL)) % MOD;
 
-	ll bm = 
-
+	ll ans = (T * mul) % MOD;
 
 	cout << ans;
 
