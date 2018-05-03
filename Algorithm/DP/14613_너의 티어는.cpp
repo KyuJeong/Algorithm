@@ -35,7 +35,6 @@ int main()
 		else tier[4] += DP[20][i];
 	}
 
-
 	for (int i = 0; i <= 4; i++)
 	{
 		printf("%.8lf\n", tier[i]);
