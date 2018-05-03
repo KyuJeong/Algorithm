@@ -1,55 +1,55 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
-typedef pair <int, int> pii;
 
-int N, M;
-string ord;
-int tbl, t;
-vector <pair <int, int>> v;
+typedef pair <int, int> pii;
 
 int main()
 {
+	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
+	int N, M;
+
 	cin >> N >> M;
-	while (N--)
+
+	vector <pii> v;
+
+	for (int i = 0; i < N; i++)
 	{
-		cin >> ord;
-		if (ord == "order")
+		string s;
+		int t, n;
+		cin >> s;
+		if (s == "order")
 		{
-			cin >> tbl >> t;
-			v.push_back(pii(t, tbl));
+			cin >> n >> t;
+			v.push_back({ t,n });
 		}
-		else if (ord == "sort")
+		else if (s == "sort")
 		{
 			sort(v.begin(), v.end());
 		}
 		else
 		{
-			cin >> tbl;
-			for (auto it = v.begin(); it != v.end(); it++)
+			cin >> n;
+			for (int i = 0; i < v.size(); i++)
 			{
-				if (it->second == tbl)
+				if (v[i].second == n)
 				{
-					v.erase(it);
-					break;
+					v.erase(v.begin() + i);
 				}
 			}
 		}
-		for (auto it = v.begin(); it != v.end(); it++)
+		for (int i = 0; i < v.size(); i++)
 		{
-			cout << it->second << " ";
+			cout << v[i].second << " ";
 		}
-
 		if (v.size() == 0)
 			cout << "sleep";
-
 		cout << "\n";
 	}
+
+
 
 	return 0;
 }
