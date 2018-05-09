@@ -12,7 +12,7 @@ int main()
 	std::ios::sync_with_stdio(false);
 
 	cin >> N;
-
+	
 	for (int i = 1; i < N; i++)
 	{
 		DP[2] = (DP[0] + 2 * DP[1]) % MOD;
