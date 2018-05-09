@@ -4,7 +4,7 @@ using namespace std;
 #define MOD 9901;
 
 int N;
-int DP[2][3];
+int DP[3] = { 3,7 };
 int ans;
 
 int main()
@@ -13,23 +13,13 @@ int main()
 
 	cin >> N;
 
-	for (int i = 0; i <= 2; i++)
-		DP[0][i] = 1;
-
 	for (int i = 1; i < N; i++)
 	{
-		DP[1][0] = (DP[0][0] + DP[0][1] + DP[0][2]) % MOD;
-		DP[1][1] = (DP[0][0] + DP[0][2]) % MOD;
-		DP[1][2] = (DP[0][0] + DP[0][1]) % MOD;
-		DP[0][0] = DP[1][0];
-		DP[0][1] = DP[1][1];
-		DP[0][2] = DP[1][2];
+		DP[2] = (DP[0] + 2 * DP[1]) % MOD;
+		DP[0] = DP[1]; DP[1] = DP[2];
 	}
 
-	for (int i = 0; i <= 2; i++)
-		ans += DP[1][i];
-
-	cout << ans % MOD;
+	cout << DP[0];
 
 	return 0;
 }
