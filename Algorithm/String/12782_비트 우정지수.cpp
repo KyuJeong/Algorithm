@@ -18,8 +18,6 @@ int main()
 
 		cin >> s1 >> s2;
 
-		int len = ;
-
 		for (int i = 0; i < s1.size(); i++)
 		{
 			if (s1[i] == '0' && s2[i] == '1')
