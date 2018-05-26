@@ -2,7 +2,9 @@
 #include <algorithm>
 using namespace std;
 
-#define INF 999999999
+#define INF 1e9
+
+typedef long long ll;
 
 int G[101][101];
 int N, M;
@@ -33,9 +35,12 @@ int main()
 	{
 		for (int j = 1; j <= N; j++)
 		{
+			if (G[j][i] == INF)
+				continue;
 			for (int k = 1; k <= N; k++)
 			{
-				G[j][k] = min(G[j][k], G[j][i] + G[i][k]);
+				if (G[j][k] > G[j][i] + G[i][k])
+					G[j][k] = G[j][i] + G[i][k];
 			}
 		}
 	}
@@ -44,6 +49,8 @@ int main()
 	{
 		for (int j = 1; j <= N; j++)
 		{
+			if (G[i][j] == INF)
+				G[i][j] = 0;
 			cout << G[i][j] << " ";
 		}
 		cout << "\n";
