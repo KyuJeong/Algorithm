@@ -33,6 +33,5 @@ int main()
 
 	cout << phi(n);
 
-
 	return 0;
 }
