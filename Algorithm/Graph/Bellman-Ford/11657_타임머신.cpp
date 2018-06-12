@@ -47,8 +47,7 @@ int main()
 			int u = j.from;
 			int v = j.to;
 			int w = j.cost;
-			if (u == INF)
-				continue;
+
 			if (dist[v] > dist[u] + w)
 			{
 				dist[v] = dist[u] + w;
