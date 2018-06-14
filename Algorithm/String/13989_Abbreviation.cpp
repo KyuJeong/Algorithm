@@ -35,7 +35,7 @@ int main()
 		{
 			if (capital_flag) // capital 진행 중일때
 			{
-				if (s[i] < 65) // 기호가 나왔을 때
+				if (s[i] < 'A') // 기호가 나왔을 때
 				{
 					if (s[i - 1] == ' ' || s[i] != ' ') // 전 문자가 공백이거나 현 문자가 공백이 아닌 기호면
 					{
@@ -57,21 +57,21 @@ int main()
 
 					capital_flag = false;
 				}
-				else if (s[i] <= 90) // 대문자가 다시 나오면
+				else if (s[i] <= 'Z') // 대문자가 다시 나오면
 					init_flag = true;
 			}
 			else // capital 진행 중 아닐 때
 			{
-				if (s[i] >= 65 && s[i] <= 90) // 대문자가 나왔을 때
+				if (s[i] >= 'A' && s[i] <= 'Z') // 대문자가 나왔을 때
 				{
-					if (s[i - 1] < 64) // 앞에 기호가 나왔으면
+					if (s[i - 1] < 'A') // 앞에 기호가 나왔으면
 						first_flag = true;
 					else
 						init_flag = true;
 				}
-				else if (s[i] > 90) // 소문자가 나왔을 때
+				else if (s[i] >= 'a') // 소문자가 나왔을 때
 				{
-					if (s[i - 1] >= 65 && s[i - 1] <= 90 && first_flag) // 전 문자가 대문자면
+					if (s[i - 1] >= 'A' && s[i - 1] <= 'Z' && first_flag) // 전 문자가 대문자면
 					{
 						if (!pre_capital)
 							src = i - 1;
