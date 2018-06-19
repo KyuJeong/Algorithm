@@ -10,7 +10,7 @@ int N;
 string s;
 string open = "({[";
 string close = ")}]";
-long long DP[201][201];	// i~j까지 만들 수 있는 올바른 문자열의 최대값
+long long DP[201][201];
 bool modular;
 
 long long Solve(int src, int dsc)
@@ -19,7 +19,7 @@ long long Solve(int src, int dsc)
 		return 1;
 
 	long long &ret = DP[src][dsc];
-	
+
 	if (ret != -1)
 		return ret;
 
@@ -48,6 +48,7 @@ long long Solve(int src, int dsc)
 
 int main()
 {
+	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
 	memset(DP, -1, sizeof(DP));
@@ -63,7 +64,7 @@ int main()
 
 	long long ans = Solve(0, N - 1);
 
-	if (modular)
+	if (modular && ans)
 		printf("%05lld\n", ans);
 	else
 		printf("%lld\n", ans);
