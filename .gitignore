@@ -65,6 +65,7 @@ dlldata.c
 *.vcxproj
 *.vcxproj.user
 *.vcxproj.filters
+*.sln
 
 # Chutzpah Test files
 _Chutzpah*
