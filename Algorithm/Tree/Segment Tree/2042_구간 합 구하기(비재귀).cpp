@@ -38,6 +38,7 @@ ll sum(int l, int r) // sum on interval [l, r)
 
 int main()
 {
+	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
 	cin >> N >> M >> K;
