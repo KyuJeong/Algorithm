@@ -27,6 +27,7 @@ int main()
 	char c;
 	int pre_time = 0;
 	int pre_height = 0;
+
 	cin >> c >> pre_time >> pre_height;
 	if (c == '+')
 		pre_height = -pre_height;
