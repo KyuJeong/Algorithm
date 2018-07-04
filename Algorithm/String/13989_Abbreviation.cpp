@@ -77,7 +77,7 @@ int main()
 							src = i - 1;
 
 						capital_flag = true; // capital 진행상태로
-						first_upper = s[i - 1]; // 첫 대문자 저장
+						first_upper = s[i - 1]; // 단어의 첫 대문자 저장
 					}
 					else
 						init_flag = true;
