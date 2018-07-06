@@ -6,46 +6,83 @@ typedef long long ll;
 
 #define MAX 1100000
 
-ll t[MAX * 2];
-int N, M, K;
 int n;
+int height;
+ll t[MAX * 2], lazy[MAX * 2];
+int N, M, K;
 
-void build() // build the tree
+void calc(int p, int leaf)
 {
-	for (int i = n - 1; i > 0; i--)
-		t[i] = t[2 * i] + t[2 * i + 1];
+	if (lazy[p] == 0)
+		t[p] = t[p << 1] + t[p << 1 | 1];
+	else
+		t[p] = t[p << 1] + t[p << 1 | 1] + lazy[p] * leaf;
 }
 
-void modify(int l, int r, int value)
+void apply(int p, ll value, int leaf)
 {
-	l -= 1;
-	for (l += n, r += n; l < r; l >>= 1, r >>= 1) {
-		if (l & 1)
-			t[l++] += value;
-		if (r & 1)
-			t[--r] += value;
+	t[p] += value * leaf;
+	if (p < n)
+		lazy[p] += value;
+}
+
+void push(int l, int r)
+{
+	int h = height, leaf = 1 << (h - 1);
+
+	for (l += n, r += n - 1; h > 0; --h, leaf >>= 1)
+	{
+		for (int i = l >> h; i <= r >> h; ++i)
+		{
+			if (lazy[i] != 0)
+			{
+				apply(i << 1, lazy[i], leaf);
+				apply(i << 1 | 1, lazy[i], leaf);
+				lazy[i] = 0;
+			}
+		}
 	}
 }
 
-void update(int pos, int val) // set value at position p
+void build(int l, int r) 
 {
-	pos--; // index 1부터 시작
-	for (t[pos += n] = val; pos > 1; pos >>= 1)
-		t[pos >> 1] = t[pos] + t[pos ^ 1];
+	int leaf = 2;
+	for (l += n, r += n - 1; l > 1; leaf <<= 1)
+	{
+		l >>= 1, r >>= 1;
+		for (int i = r; i >= l; --i) 
+			calc(i, leaf);
+	}
 }
 
-ll sum(int l, int r) // sum on interval [l, r)
+void update(int l, int r, int value) 
 {
-	ll ans = 0;
-	l--; // index 1부터 시작
+	if (value == 0) return;
+	push(l, l + 1);
+	push(r - 1, r);
+	int l0 = l, r0 = r, leaf = 1;
+	for (l += n, r += n; l < r; l >>= 1, r >>= 1, leaf <<= 1)
+	{
+		if (l & 1) apply(l++, value, leaf);
+		if (r & 1) apply(--r, value, leaf);
+	}
+	build(l0, l0 + 1);
+	build(r0 - 1, r0);
+}
+
+ll query(int l, int r)
+{
+	push(l, l + 1);
+	push(r - 1, r);
+	ll res = 0;
 	for (l += n, r += n; l < r; l >>= 1, r >>= 1)
 	{
 		if (l & 1)
-			ans += t[l++];
+			res += t[l++];
 		if (r & 1)
-			ans += t[--r];
+			res += t[--r];
 	}
-	return ans;
+	return res;
 }
 
 int main()
@@ -57,20 +94,30 @@ int main()
 	n = 1;
 	while (n < N)
 		n *= 2;
+
+	height = floor(log2(n));
+
 	for (int i = 0; i < N; i++)
 		cin >> t[n + i];
 
-	build();
+	for (int i = n - 1; i > 0; i--)
+		t[i] = t[i << 1] + t[i << 1 | 1];
 
-	int a, b, c;
+	int a, b, c, d;
 
 	for (int i = 0; i < M + K; i++)
 	{
-		cin >> a >> b >> c;
+		cin >> a;
 		if (a == 1)
-			update(b, c);
+		{
+			cin >> b >> c >> d;
+			update(b - 1, c, d);
+		}
 		else
-			cout << sum(b, c) << "\n";
+		{
+			cin >> b >> c;
+			cout << query(b - 1, c) << "\n";
+		}
 	}
 
 	return 0;
