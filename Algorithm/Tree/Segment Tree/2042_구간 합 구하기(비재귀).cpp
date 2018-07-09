@@ -6,35 +6,37 @@ typedef long long ll;
 
 #define MAX 1100000
 
-ll t[MAX * 2];
 int N, M, K;
 int n;
+ll t[MAX * 2];
 
-void build() // build the tree
+void update(int pos, int val) 
 {
-	for (int i = n - 1; i > 0; i--)
-		t[i] = t[2 * i] + t[2 * i + 1];
+	pos += n - 1;
+	while (pos)
+	{
+		t[pos] += val;
+		pos >>= 1;
+	}
 }
 
-void update(int pos, int val) // set value at position p
+ll query(int l, int r)
 {
-	pos--; // index 1부터 시작
-	for (t[pos += n] = val; pos > 1; pos >>= 1)
-		t[pos >> 1] = t[pos] + t[pos ^ 1];
-}
+	l += n - 1;
+	r += n - 1;
+	ll ret = 0;
 
-ll sum(int l, int r) // sum on interval [l, r)
-{
-	ll ans = 0;
-	l--; // index 1부터 시작
-	for (l += n, r += n; l < r; l >>= 1, r >>= 1)
+	while (l <= r)
 	{
 		if (l & 1)
-			ans += t[l++];
-		if (r & 1)
-			ans += t[--r];
+			ret += t[l++];
+		if (!(r & 1))
+			ret += t[r--];
+		l >>= 1;
+		r >>= 1;
 	}
-	return ans;
+
+	return ret;
 }
 
 int main()
@@ -45,11 +47,13 @@ int main()
 	cin >> N >> M >> K;
 	n = 1;
 	while (n < N)
-		n *= 2;
+		n <<= 1;
+
 	for (int i = 0; i < N; i++)
 		cin >> t[n + i];
 
-	build();
+	for (int i = n - 1; i > 0; i--)
+		t[i] = t[i << 1] + t[i << 1 | 1];
 
 	int a, b, c;
 
@@ -57,9 +61,12 @@ int main()
 	{
 		cin >> a >> b >> c;
 		if (a == 1)
-			update(b, c);
+		{
+			ll dif = c - t[b + n - 1];
+			update(b, dif);
+		}
 		else
-			cout << sum(b, c) << "\n";
+			cout << query(b, c) << "\n";
 	}
 
 	return 0;
