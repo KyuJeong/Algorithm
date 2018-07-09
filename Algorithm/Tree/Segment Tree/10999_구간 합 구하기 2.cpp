@@ -6,83 +6,81 @@ typedef long long ll;
 
 #define MAX 1100000
 
-int n;
-int height;
-ll t[MAX * 2], lazy[MAX * 2];
 int N, M, K;
+int n;
+ll t[MAX * 2], lazy[MAX * 2];
 
-void calc(int p, int leaf)
+void update(int l, int r, ll val)
 {
-	if (lazy[p] == 0)
-		t[p] = t[p << 1] + t[p << 1 | 1];
-	else
-		t[p] = t[p << 1] + t[p << 1 | 1] + lazy[p] * leaf;
-}
-
-void apply(int p, ll value, int leaf)
-{
-	t[p] += value * leaf;
-	if (p < n)
-		lazy[p] += value;
-}
-
-void push(int l, int r)
-{
-	int h = height, leaf = 1 << (h - 1);
-
-	for (l += n, r += n - 1; h > 0; --h, leaf >>= 1)
+	l += n - 1;
+	r += n - 1;
+	int cnt = 1;
+	while (l <= r)
 	{
-		for (int i = l >> h; i <= r >> h; ++i)
+		if (l & 1)
 		{
-			if (lazy[i] != 0)
+			lazy[l] += val;
+			int k = l >> 1;
+			while (k)
 			{
-				apply(i << 1, lazy[i], leaf);
-				apply(i << 1 | 1, lazy[i], leaf);
-				lazy[i] = 0;
+				t[k] += val * cnt;
+				k >>= 1;
 			}
+			l++;
 		}
+		if (!(r & 1))
+		{
+			lazy[r] += val;
+			int k = r >> 1;
+			while (k)
+			{
+				t[k] += val * cnt;
+				k >>= 1;
+			}
+			r--;
+		}
+		cnt <<= 1;
+		l >>= 1;
+		r >>= 1;
 	}
-}
-
-void build(int l, int r) 
-{
-	int leaf = 2;
-	for (l += n, r += n - 1; l > 1; leaf <<= 1)
-	{
-		l >>= 1, r >>= 1;
-		for (int i = r; i >= l; --i) 
-			calc(i, leaf);
-	}
-}
-
-void update(int l, int r, int value) 
-{
-	if (value == 0) return;
-	push(l, l + 1);
-	push(r - 1, r);
-	int l0 = l, r0 = r, leaf = 1;
-	for (l += n, r += n; l < r; l >>= 1, r >>= 1, leaf <<= 1)
-	{
-		if (l & 1) apply(l++, value, leaf);
-		if (r & 1) apply(--r, value, leaf);
-	}
-	build(l0, l0 + 1);
-	build(r0 - 1, r0);
 }
 
 ll query(int l, int r)
 {
-	push(l, l + 1);
-	push(r - 1, r);
-	ll res = 0;
-	for (l += n, r += n; l < r; l >>= 1, r >>= 1)
+	l += n - 1;
+	r += n - 1;
+	ll ret = 0;
+	int cnt = 1;
+
+	while (l <= r)
 	{
 		if (l & 1)
-			res += t[l++];
-		if (r & 1)
-			res += t[--r];
+		{
+			ret += t[l];
+			int k = l;
+			while (k)
+			{
+				ret += lazy[k] * cnt;
+				k >>= 1;
+			}
+			l++;
+		}
+		if (!(r & 1))
+		{
+			ret += t[r];
+			int k = r;
+			while (k)
+			{
+				ret += lazy[k] * cnt;
+				k >>= 1;
+			}
+			r--;
+		}
+		cnt <<= 1;
+		l >>= 1;
+		r >>= 1;
 	}
-	return res;
+	return ret;
 }
 
 int main()
@@ -93,9 +91,7 @@ int main()
 	cin >> N >> M >> K;
 	n = 1;
 	while (n < N)
-		n *= 2;
-
-	height = floor(log2(n));
+		n <<= 1;
 
 	for (int i = 0; i < N; i++)
 		cin >> t[n + i];
@@ -111,12 +107,12 @@ int main()
 		if (a == 1)
 		{
 			cin >> b >> c >> d;
-			update(b - 1, c, d);
+			update(b, c, d);
 		}
 		else
 		{
 			cin >> b >> c;
-			cout << query(b - 1, c) << "\n";
+			cout << query(b, c) << "\n";
 		}
 	}
 
