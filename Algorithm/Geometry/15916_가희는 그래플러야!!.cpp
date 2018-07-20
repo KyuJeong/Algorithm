@@ -3,8 +3,8 @@
 using namespace std;
 
 int n;
-double arr[100001];
 double k;
+double arr[100001];
 
 int main()
 {
