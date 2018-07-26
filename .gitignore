@@ -214,6 +214,7 @@ input.txt
 
 # Base code
 base.cpp
+template.cpp
 
 # Test code
 test.cpp
