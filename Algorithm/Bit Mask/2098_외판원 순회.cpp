@@ -3,6 +3,8 @@
 
 using namespace std;
 
+#define INF 20000000
+
 int N;
 int G[17][17];
 int DP[17][65536];
@@ -11,15 +13,18 @@ int CalCost(int cur, int check)
 {
 	// 모든 정점을 다 들른 경우
 	if (check == ((1 << N) - 1))
+	{
+		if (G[cur][1] == 0) return INF;
 		return G[cur][1];
+	}
 
 	// 계산했던 경로인 경우
 	if (DP[cur][check])
 		return DP[cur][check];
 
-	int val = 99999999;
+	int val = INF;
 
-	for (int i = 1; i <= N; i++)
+	for (int i = 0; i <= N; i++)
 	{
 		// 방문했던 정점인 경우
 		if (check & (1 << (i - 1)))
@@ -40,17 +45,14 @@ int CalCost(int cur, int check)
 
 int main()
 {
+	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
 	cin >> N;
 
 	for (int i = 1; i <= N; i++)
-	{
 		for (int j = 1; j <= N; j++)
-		{
 			cin >> G[i][j];
-		}
-	}
 
 	cout << CalCost(1, 1);
 
