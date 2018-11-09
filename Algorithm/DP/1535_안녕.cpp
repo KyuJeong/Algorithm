@@ -3,7 +3,7 @@
 using namespace std;
 
 int n;
-int d[101]; // 체력이 n남았을 때의 최대 기쁨
+int d[101]; // 체력이 n 남았을 때의 최대 기쁨
 int hp[21];
 int glad[21];
 
