@@ -18,6 +18,7 @@ int dist(Pt a, Pt b) { return abs(a.x - b.x) + abs(a.y - b.y); }
 
 int solve()
 {
+	int house_len = house.size();
 	int chic_len = chic.size();
 	vector <int> arr;
 
@@ -32,13 +33,13 @@ int solve()
 	do
 	{
 		int sum = 0;
-		for (auto i : house)
+		for (int i = 0; i < house_len; i++)
 		{
 			int _min = 1e9;
 			for (int j = 0; j < chic_len; j++)
 			{
 				if (arr[j] == 0)
-					_min = min(_min, dist(i, chic[j]));
+					_min = min(_min, dist(house[i], chic[j]));
 			}
 			sum += _min;
 		}
