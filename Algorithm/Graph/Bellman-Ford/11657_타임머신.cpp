@@ -4,71 +4,53 @@ using namespace std;
 
 #define INF 1e9
 
-struct Edge
-{
-	int from, to, cost;
-	Edge() {}
-	Edge(int _from, int _to, int _cost)
-		: from(_from), to(_to), cost(_cost) {}
-};
-
-typedef vector <int> vi;
 typedef pair <int, int> pii;
-
-int N, M;
+int n, m;
+vector <pii> v[501];
 int dist[501];
-vector <Edge> edge;
 
 int main()
 {
 	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
-	cin >> N >> M;
+	cin >> n >> m;
 
-	for (int i = 2; i <= N; i++)
+	for (int i = 1; i <= n; i++)
 		dist[i] = INF;
-
-	for (int i = 0; i < M; i++)
-	{
-		int u, v, w;
-		cin >> u >> v >> w;
-		edge.push_back({ u,v,w });
-	}
-
 	dist[1] = 0;
 
-	bool n_cycle = false;
-
-	for (int i = 1; i <= N; i++)
+	int a, b, c;
+	for (int i = 0; i < m; i++)
 	{
-		for (auto j : edge)
-		{
-			int u = j.from;
-			int v = j.to;
-			int w = j.cost;
+		cin >> a >> b >> c;
+		v[a].push_back({ b,c });
+	}
 
-			if (dist[v] > dist[u] + w)
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= n; j++)
+		{
+			for (auto k : v[j])
 			{
-				dist[v] = dist[u] + w;
-				if (i == N) // N번째에 값이 변경되면 음수사이클 존재
-					n_cycle = true;
+				if (dist[j] != INF && dist[k.first] > dist[j] + k.second)
+				{
+					dist[k.first] = dist[j] + k.second;
+					if (i == n)
+					{
+						cout << "-1";
+						return 0;
+					}
+				}
 			}
 		}
 	}
 
-	if (n_cycle)
+	for (int i = 2; i <= n; i++)
 	{
-		cout << "-1";
-		return 0;
+		if (dist[i] == INF) dist[i] = -1;
+		cout << dist[i] << "\n";
 	}
 
-	for (int i = 2; i <= N; i++)
-	{
-		if (dist[i] == INF)
-			cout << -1 << "\n";
-		else
-			cout << dist[i] << "\n";
-	}
 	return 0;
 }
