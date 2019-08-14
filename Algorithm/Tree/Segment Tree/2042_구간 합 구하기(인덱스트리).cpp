@@ -2,17 +2,17 @@
 
 using namespace std;
 
-typedef long long ll;
-
 #define MAX 1100000
 
-int N, M, K;
-int n;
+typedef long long ll;
 ll t[MAX * 2];
+int n, m, k;
+int sz = 1;
 
-void update(int pos, int val) 
+void update(int pos, ll val)
 {
-	pos += n - 1;
+	pos += sz - 1;
+	val -= t[pos];
 	while (pos)
 	{
 		t[pos] += val;
@@ -22,10 +22,9 @@ void update(int pos, int val)
 
 ll query(int l, int r)
 {
-	l += n - 1;
-	r += n - 1;
+	l += sz - 1;
+	r += sz - 1;
 	ll ret = 0;
-
 	while (l <= r)
 	{
 		if (l & 1)
@@ -35,7 +34,6 @@ ll query(int l, int r)
 		l >>= 1;
 		r >>= 1;
 	}
-
 	return ret;
 }
 
@@ -44,27 +42,23 @@ int main()
 	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
-	cin >> N >> M >> K;
-	n = 1;
-	while (n < N)
-		n <<= 1;
+	cin >> n >> m >> k;
 
-	for (int i = 0; i < N; i++)
-		cin >> t[n + i];
+	while (sz < n)
+		sz <<= 1;
 
-	for (int i = n - 1; i > 0; i--)
+	for (int i = 0; i < n; i++)
+		cin >> t[i + sz];
+
+	for (int i = sz - 1; i > 0; i--)
 		t[i] = t[i << 1] + t[i << 1 | 1];
 
-	int a, b, c;
-
-	for (int i = 0; i < M + K; i++)
+	ll a, b, c;
+	for (int i = 0; i < m + k; i++)
 	{
 		cin >> a >> b >> c;
 		if (a == 1)
-		{
-			ll dif = c - t[b + n - 1];
-			update(b, dif);
-		}
+			update(b, c);
 		else
 			cout << query(b, c) << "\n";
 	}
