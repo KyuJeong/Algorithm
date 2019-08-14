@@ -28,11 +28,11 @@ ll query(int l, int r)
 
 	while (l <= r)
 	{
-		if (l & 1)
+		if (l & 1) // 시작위치가 홀수라면 부모가 아닌 자기자신만 더해줘야함
 			ret += t[l++];
-		if (!(r & 1))
+		if (!(r & 1)) // 끝위치가 짝수라면 부모가 아닌 자기자신만 더해줘야함
 			ret += t[r--];
-		l >>= 1;
+		l >>= 1; // 부모로 이동
 		r >>= 1;
 	}
 
@@ -46,7 +46,7 @@ int main()
 
 	cin >> N >> M >> K;
 	sz = 1;
-	while (sz < N)
+	while (sz < N) // 시작위치 지정(2의 제곱수로)
 		sz <<= 1;
 
 	for (int i = 0; i < N; i++)
