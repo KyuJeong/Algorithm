@@ -1,125 +1,63 @@
-#include <iostream>
-#include <queue>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-typedef pair <int, int> pii;
+int n;
+string s[4];
+int rot[4];
 
-int wheel[5][8];
-int K;
-int in_num, in_dir;
-int nw[] = { -1,1 };
-int score;
-
-void Spin()
-{
-	bool check[5] = { false };	// 지나친 톱니바퀴인지
-	int final_dir[5];	// 돌릴 방향을 저장해놨다가 마지막에 돌림
-
-	queue <pii> q;
-
-	q.push({ in_num, in_dir });
-
-	while (!q.empty())
-	{
-		int num = q.front().first;
-		int dir = q.front().second;
-		final_dir[num] = dir;
-		check[num] = true;
-		q.pop();
-
-		for (int i = 0; i < 2; i++)
-		{
-			int nxt = num + nw[i];
-			if (nxt == 0 || nxt == 5 || check[nxt])
-				continue;
-			if (dir == 0) // 앞의 바퀴가 회전하지 않았다면
-			{
-				q.push({ nxt, 0 });
-				continue;
-			}
-			if (nxt > num)
-			{
-				if (wheel[num][2] == wheel[nxt][6])
-					q.push({ nxt, 0 });
-				else
-				{
-					if (dir == 1)
-						q.push({ nxt, -1 });
-					else
-						q.push({ nxt, 1 });
-				}
-			}
-			else
-			{
-				if (wheel[num][6] == wheel[nxt][2])
-					q.push({ nxt, 0 });
-				else
-				{
-					if (dir == 1)
-						q.push({ nxt, -1 });
-					else
-						q.push({ nxt, 1 });
-				}
-			}
-		}
+void rotate(int a, int b) {
+	if (b == 1) {
+		int e = s[a][7];
+		for (int i = 7; i > 0; i--)
+			s[a][i] = s[a][i - 1];
+		s[a][0] = e;
 	}
-
-	// 실제 톱니바퀴를 돌림
-	for (int i = 1; i <= 5; i++)
-	{
-		if (final_dir[i] == -1)
-		{
-			int tmp = wheel[i][0];
-			for (int j = 0; j < 7; j++)
-			{
-				wheel[i][j] = wheel[i][j + 1];
-			}
-			wheel[i][7] = tmp;
-		}
-		else if (final_dir[i] == 1)
-		{
-			int tmp = wheel[i][7];
-			for (int j = 7; j > 0; j--)
-			{
-				wheel[i][j] = wheel[i][j - 1];
-			}
-			wheel[i][0] = tmp;
-		}
+	else {
+		int e = s[a][0];
+		for (int i = 0; i < 7; i++)
+			s[a][i] = s[a][i + 1];
+		s[a][7] = e;
 	}
 }
 
-int main()
-{
+void moveLeft(int a, int b) {
+	if (a > 0) {
+		if (s[a][6] != s[a - 1][2]) moveLeft(a - 1, -b);
+	}
+	rotate(a, b);
+}
 
-	for (int i = 1; i <= 4; i++)
-	{
-		for (int j = 0; j < 8; j++)
-		{
-			scanf("%1d", &wheel[i][j]);
-		}
+void moveRight(int a, int b) {
+	if (a < 3) {
+		if (s[a][2] != s[a + 1][6]) moveRight(a + 1, -b);
+	}
+	rotate(a, b);
+}
+
+int main() {
+	cin.tie(NULL);
+	std::ios::sync_with_stdio(false);
+
+	for (int i = 0; i < 4; i++)
+		cin >> s[i];
+
+	cin >> n;
+
+	for (int i = 0; i < n; i++) {
+		int a, b;
+		cin >> a >> b;
+		moveLeft(--a, b);
+		rotate(a, -b);
+		moveRight(a, b);
 	}
 
-	scanf("%d", &K);
-	
-	while (K--)
-	{
-		scanf("%d %d", &in_num, &in_dir);
-
-		Spin();
+	int ans = 0;
+	for (int i = 0; i < 4; i++) {
+		if (s[i][0] == '1') ans += pow(2, i);
 	}
 
-	int mul = 1;
-
-	for (int i = 1; i <= 4; i++)
-	{
-		if (wheel[i][0] == 1)
-			score += mul;
-		mul *= 2;
-	}
-
-	cout << score;
+	cout << ans;
 
 	return 0;
 }
