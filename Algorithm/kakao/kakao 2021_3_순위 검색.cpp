@@ -75,8 +75,6 @@ void setUserInfo(vector<string> info) {
 		else user.food = 2;
 		num += (user.food * 125);
 
-		// 1322
-
 		user.score = stoi(vec[4]);
 
 		all_user.push_back(user);

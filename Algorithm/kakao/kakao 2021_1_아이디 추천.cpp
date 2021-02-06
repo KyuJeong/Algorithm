@@ -34,7 +34,6 @@ string solve(string ss) {
 		}
 	}
 
-	// 4´Ü°è
 	if (s[0] == '.') s.erase(0, 1);
 	if (s.size() != 0 && s[s.size() - 1] == '.') s.erase(s.size() - 1, 1);
 
