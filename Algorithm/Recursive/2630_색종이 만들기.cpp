@@ -38,7 +38,8 @@ int main() {
 		for (int j = 0; j < n; j++)
 			cin >> G[i][j];
 
-	solve(0, 0, n);
+	int ans = solve(0, 0, n);
+	if (ans != -1) cnt[G[0][0]]++;
 
 	cout << cnt[0] << "\n";
 	cout << cnt[1];
