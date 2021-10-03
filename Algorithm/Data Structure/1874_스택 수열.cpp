@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int cur;
-int pre, _max, cnt;
+stack <int> st;
+vector <int> vt;
 string ans;
 
 int main() {
@@ -13,20 +13,24 @@ int main() {
 
 	int n;
 	cin >> n;
+	vt.resize(n);
+
+	for (int i = 0; i < n; i++)
+		cin >> vt[i];
+
+	int nxt = 1;
 
 	for (int i = 0; i < n; i++) {
-		cin >> cur;
-
-		if (cur > pre && cur < _max) {
+		if (!st.empty() && st.top() > vt[i]) {
 			cout << "NO";
 			return 0;
 		}
-		for (int i = 0; i < cur - _max; i++)
-			ans += "+";
-		ans += "-";
-		pre = cur;
-		_max = max(_max, pre);
-		cnt++;
+		while (st.empty() || st.top() != vt[i]) {
+			st.push(nxt++);
+			ans += '+';
+		}
+		st.pop();
+		ans += '-';
 	}
 
 	for (auto i : ans)
