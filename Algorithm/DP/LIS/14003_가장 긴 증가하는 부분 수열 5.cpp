@@ -2,12 +2,13 @@
 
 using namespace std;
 
+#define MAX_N 1000001
+
 typedef vector <int> vi;
 
-int p[1000001], arr[1000001];
+int p[MAX_N], arr[MAX_N];
 
-int main()
-{
+int main() {
 	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
@@ -15,20 +16,17 @@ int main()
 	cin >> n;
 
 	vi v;
-	v.push_back(-1e9);
+	v.push_back(-2e9);
 
 	int tmp;
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++) {
 		cin >> tmp;
 		arr[i] = tmp;
-		if (v.back() < tmp)
-		{
+		if (v.back() < tmp) {
 			v.push_back(tmp);
 			p[i] = v.size() - 1;
 		}
-		else
-		{
+		else {
 			auto it = lower_bound(v.begin(), v.end(), tmp);
 			p[i] = it - v.begin();
 			*it = tmp;
@@ -37,10 +35,8 @@ int main()
 
 	vi ans;
 	int idx = v.size() - 1;
-	for (int i = n - 1; i >= 0; i--)
-	{
-		if (p[i] == idx)
-		{
+	for (int i = n - 1; i >= 0; i--) {
+		if (p[i] == idx) {
 			ans.push_back(arr[i]);
 			idx--;
 		}
