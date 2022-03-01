@@ -3,59 +3,47 @@
 
 using namespace std;
 
-int N, S;
+int n, k;
 int arr[100001];
 int _min = 1e9;
-int s;
+int sum;
 
-int main()
-{
+int main() {
 	cin.tie(NULL);
 	std::ios::sync_with_stdio(false);
 
-	cin >> N >> S;
+	cin >> n >> k;
 
-	cin >> arr[0];
-	s = arr[0];
-
-	for (int i = 1; i < N; i++)
-	{
+	for (int i = 0; i < n; i++) {
 		cin >> arr[i];
-		s += arr[i];
-		if (arr[i] >= S)
-		{
+		sum += arr[i];
+		if (arr[i] >= k) {
 			cout << "1";
 			return 0;
-		}	
+		}
 	}
 
-	if (s < S)
-	{
+	if (sum < k) {
 		cout << "0";
 		return 0;
 	}
 
 	int l = 0;
 	int r = 1;
-	int sum = arr[0] + arr[1];
+	sum = arr[0] + arr[1];
 
-	while (r < N)
-	{
-		if (sum < S)
-		{
+	while (r < n) {
+		if (sum < k) {
 			r++;
 			sum += arr[r];
 		}
-		else
-		{
-			_min = min(_min, r - l + 1);
-			if (sum - arr[l] >= S)
-			{
+		else {
+			if (_min > r - l + 1) _min = r - l + 1;
+			if (sum - arr[l] >= k) {
 				sum -= arr[l];
 				l++;
 			}
-			else
-			{
+			else {
 				r++;
 				sum += arr[r];
 			}
