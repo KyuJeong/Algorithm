@@ -41,7 +41,7 @@ void fft(vcd &f, bool inv) {
 	}
 }
 
-vi mul(vcd &fa, vcd &fb) {
+void mul(vcd &fa, vcd &fb, vi &res) {
 	int n = 1;
 	while (n < fa.size() + fb.size())
 		n <<= 1;
@@ -55,11 +55,10 @@ vi mul(vcd &fa, vcd &fb) {
 		fa[i] *= fb[i];
 	fft(fa, true);
 
-	vi ret(n);
+	res.resize(n);
 	for (int i = 0; i < n; i++)
-		ret[i] = int(fa[i].real() + (fa[i].real() > 0 ? 0.5 : -0.5));
+		res[i] = int(fa[i].real() + (fa[i].real() > 0 ? 0.5 : -0.5));
 
-	return ret;
 }
 
 int main() {
@@ -70,6 +69,7 @@ int main() {
 	cin >> A >> B;
 
 	vcd X, Y;
+	vi S;
 
 	for (int i = A.size() - 1; i >= 0; i--)
 		X.push_back(cd(A[i] - '0', 0.0));
@@ -77,7 +77,7 @@ int main() {
 	for (int i = B.size() - 1; i >= 0; i--)
 		Y.push_back(cd(B[i] - '0', 0.0));
 
-	vi S = mul(X, Y);
+	mul(X, Y, S);
 	for (int i = 0; i < S.size() - 1; i++) {
 		S[i + 1] += S[i] / 10;
 		S[i] %= 10;
