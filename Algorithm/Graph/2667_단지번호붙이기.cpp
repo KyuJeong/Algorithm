@@ -12,7 +12,7 @@ int idx;
 int house_count[625];
 
 struct Pt
-{
+{ 
 	int y;
 	int x;
 	Pt()
