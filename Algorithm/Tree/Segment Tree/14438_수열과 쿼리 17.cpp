@@ -1,82 +1,68 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-typedef long long ll;
+#define MAX 140000
 
-int N;
-int M;
+int N, M, K;
+int sz;
+int t[MAX * 2];
 
-ll Init(vector <ll> &arr, vector <ll> &tree, int node, int start, int end)
-{
-	if (start == end)
-		return tree[node] = arr[start];
-
-	int mid = (start + end) / 2;
-
-	return tree[node] = min(Init(arr, tree, node * 2, start, mid), Init(arr, tree, node * 2 + 1, mid + 1, end));
+void update(int pos, int val) {
+	pos += sz - 1;
+	t[pos] = val;
+	pos >>= 1;
+	while (pos) {
+		t[pos] = min(t[pos << 1], t[pos << 1 | 1]);
+		pos >>= 1;
+	}
 }
 
-ll Update(vector <ll> &tree, int node, int start, int end, int index, ll val)
-{
-	if (index < start || index > end)
-		return tree[node];
+int query(int l, int r) {
+	l += sz - 1;
+	r += sz - 1;
+	int ret = 1e9;
 
-	int mid = (start + end) / 2;
+	while (l <= r) {
+		if (l & 1)
+			ret = min(ret, t[l++]);
+		if (!(r & 1))
+			ret = min(ret, t[r--]);
+		l >>= 1;
+		r >>= 1;
+	}
 
-	if (start == end)
-		return tree[node] = val;
-	else
-		return tree[node] = min(Update(tree, node * 2, start, mid, index, val), Update(tree, node * 2 + 1, mid + 1, end, index, val));
+	return ret;
 }
 
-ll Min(vector <ll> &tree, int node, int start, int end, int left, int right)
-{
-	if (left > end || right < start)	// [left, right]와 [start, end]가 겹치지 않는 경우
-		return 1e9;
+int main() {
+	cin.tie(NULL);
+	std::ios::sync_with_stdio(false);
 
-	if (left <= start && end <= right)	// [left, right]가 [start, end]를 완전히 포함하는 경우
-		return tree[node];
+	cin >> N;
+	sz = 1;
+	while (sz < N)
+		sz <<= 1;
 
-	int mid = (start + end) / 2;
-
-	return min(Min(tree, node * 2, start, mid, left, right), Min(tree, node * 2 + 1, mid + 1, end, left, right));
-}
-
-int main()
-{
-
-	scanf("%d", &N);
-
-	vector <ll> A(N);
+	for (int i = 0; i < sz * 2; i++)
+		t[i] = 1e9;
 
 	for (int i = 0; i < N; i++)
-	{
-		scanf("%lld", &A[i]);
-	}
-	scanf("%d", &M);
+		cin >> t[sz + i];
 
-	int h = (int)ceil(log2(N));
-	int size = (1 << (h + 1));
+	for (int i = sz - 1; i > 0; i--)
+		t[i] = min(t[i << 1], t[i << 1 | 1]);
 
-	vector <ll> v(size);
-	Init(A, v, 1, 0, N - 1);
+	int a, b, c;
 
-	while (M--)
-	{
-		int q, idx, b;
-		scanf("%d %d %d", &q, &idx, &b);
-		if (q == 1)
-		{
-			Update(v, 1, 0, N - 1, idx - 1, b);
-		}
+	cin >> M;
+
+	for (int i = 0; i < M; i++) {
+		cin >> a >> b >> c;
+		if (a == 1)
+			update(b, c);
 		else
-		{
-			printf("%lld\n", Min(v, 1, 0, N - 1, idx - 1, b - 1));
-		}
+			cout << query(b, c) << "\n";
 	}
 
 	return 0;
